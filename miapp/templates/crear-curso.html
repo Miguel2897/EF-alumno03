@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear Cursos
+{% endblock %}
+
+{% block content %}
+    <h1 class="h1 text-center">Crear Curso</h1>
+
+    <form method="GET" action="/recibircurso/">
+      <div class="mb-3">
+        <label for="codigo" class="form-label">Código</label>
+        <input type="text" name="codigo" class="form-control" id="codigo" 
+        placeholder="Agrega un código" required>
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" name="nombre" class="form-control" id="nombre" 
+        placeholder="Agrega un nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="horas" class="form-label">Horas</label>
+        <input type="number" name="horas" class="form-control" id="horas" 
+        placeholder="Agrega cantidad de horas" required>
+      </div>
+      <div class="mb-3">
+        <label for="creditos" class="form-label">Creditos</label>
+        <input type="number" name="creditos" class="form-control" id="creditos" 
+        placeholder="Agrega cantidad de créditos" required>
+      </div>
+      <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <select class="form-select" id="estado" name="estado" required>
+          <option selected>Elige un estado</option>
+          <option value="A">Activo</option>
+          <option value="D">Desactivo</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Agregar producto</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear Productos
+{% endblock %}
+
+{% block content %}
+    <h1 class="h1 text-center">Crear Producto</h1>
+    <form method="GET" action="/recibirproducto/">
+        <div class="mb-3">
+          <label for="codigo" class="form-label">Código</label>
+          <input type="text" name="codigo" class="form-control" id="codigo" 
+          placeholder="Agrega un código" required>
+        </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" name="nombre" class="form-control" id="nombre" 
+          placeholder="Agrega un nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="precio_compra" class="form-label">Precio de la compra</label>
+          <input type="number" name="precio_compra" class="form-control" id="precio_compra" 
+          placeholder="Agrega precio" required>
+        </div>
+        <div class="mb-3">
+          <label for="precio_venta" class="form-label">Precio de la venta</label>
+          <input type="number" name="precio_venta" class="form-control" id="precio_venta" 
+          placeholder="Agrega precio" required>
+        </div>
+        <div class="mb-3">
+          <label for="fecha_compra" class="form-label">Fecha de la compra</label>
+          <input type="date" name="fecha_compra" class="form-control" id="fecha_compra" 
+          placeholder="Agrega fecha" required>
+        </div>
+        <div class="mb-3">
+          <label for="estado" class="form-label">Estado</label>
+          <select class="form-select" id="estado" name="estado" required>
+            <option selected>Elige un estado</option>
+            <option value="A">Activo</option>
+            <option value="D">Desactivo</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Agregar producto</button>
+      </form>
+{% endblock %}

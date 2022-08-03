@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Cursos
+{% endblock %}
+
+{% block content %}
+    <h1 class="h1 text-center">Cursos</h1>
+    
+    <div class="row">
+    {% for curso in cursos %}
+        <div class="col-4 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    {{ curso.codigo }}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item active" aria-current="true">{{ curso.nombre }}</li>
+                        <li class="list-group-item">Horas: {{ curso.horas }}</li>
+                        <li class="list-group-item">Creditos: {{ curso.creditos }}</li>
+                        <li class="list-group-item">Fecha de registro: {{ producto.fecha_registro }}</li>
+                        <li class="list-group-item">Estado: {{ curso.estado }}</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

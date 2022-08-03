@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Productos
+{% endblock %}
+
+{% block content %}
+    <h1 class="h1 text-center">Productos</h1>
+    
+    <div class="row">
+    {% for producto in productos %}
+        <div class="col-4 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    {{ producto.codigo }}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item active" aria-current="true">{{ producto.nombre }}</li>
+                        <li class="list-group-item">Precio de compra: {{ producto.precio_compra }}</li>
+                        <li class="list-group-item">Precio de venta: {{ producto.precio_venta }}</li>
+                        <li class="list-group-item">Fecha de compra: {{ producto.fecha_compra }}</li>
+                        <li class="list-group-item">Fecha de registro: {{ producto.fecha_registro }}</li>
+                        <li class="list-group-item">Estado: {{ producto.state }}</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
